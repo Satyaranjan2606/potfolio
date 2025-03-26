@@ -3,59 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Full-Stack Developer Portfolio</title>
+    <title>Satyaranjan Mohanty | Full-Stack Developer Portfolio</title>
     <style>
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f8f9fa;
-            color: #343a40;
+            background-color: #1a1a2e;
+            color: #eaeaea;
         }
         header {
-            background-color: #007bff;
+            background: linear-gradient(90deg, #007bff, #0056b3);
             color: white;
-            padding: 20px;
+            padding: 40px 20px;
             text-align: center;
         }
         header h1 {
             margin: 0;
-            font-size: 2.5rem;
+            font-size: 3rem;
+            letter-spacing: 1px;
         }
         header p {
-            margin: 5px 0 20px;
+            margin: 10px 0 20px;
             font-size: 1.2rem;
         }
         .cta {
             display: flex;
             justify-content: center;
-            gap: 10px;
+            gap: 15px;
         }
         .cta a {
             text-decoration: none;
             color: white;
-            background-color: #0056b3;
-            padding: 10px 20px;
+            background-color: #003d80;
+            padding: 12px 25px;
             border-radius: 5px;
-            transition: background-color 0.3s;
+            font-size: 1rem;
+            transition: transform 0.3s, background-color 0.3s;
         }
         .cta a:hover {
-            background-color: #003d80;
+            transform: scale(1.05);
+            background-color: #001f40;
         }
         section {
             max-width: 1100px;
             margin: 40px auto;
             padding: 20px;
-            background-color: white;
+            background-color: #162447;
             border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
         }
         section h2 {
+            color: #00d4ff;
             border-bottom: 2px solid #007bff;
             display: inline-block;
             padding-bottom: 5px;
             margin-bottom: 20px;
-            font-size: 1.8rem;
+            font-size: 2rem;
         }
         .skills, .projects {
             display: flex;
@@ -65,9 +69,10 @@
         .skill, .project {
             flex: 1 1 calc(50% - 20px);
             padding: 15px;
-            border: 1px solid #dee2e6;
+            border: 1px solid #293b5f;
             border-radius: 8px;
-            background-color: #f8f9fa;
+            background-color: #1f4068;
+            color: #eaeaea;
             transition: transform 0.3s;
         }
         .skill:hover, .project:hover {
@@ -76,18 +81,27 @@
         footer {
             text-align: center;
             padding: 20px;
-            background-color: #343a40;
+            background-color: #0f3460;
             color: white;
         }
         footer a {
-            color: #007bff;
+            color: #00d4ff;
             text-decoration: none;
+        }
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1.5s forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>[Your Name]</h1>
+    <header class="fade-in">
+        <h1>Satyaranjan Mohanty</h1>
         <p>Full-Stack Web Developer | Laravel, PHP, JavaScript, APIs</p>
         <div class="cta">
             <a href="#projects">View Projects</a>
@@ -95,12 +109,12 @@
         </div>
     </header>
 
-    <section id="about">
+    <section id="about" class="fade-in">
         <h2>About Me</h2>
-        <p>I am a Full-Stack Web Developer with 2.5 years of experience, currently working at Polosoft as a Software Developer. My expertise includes Laravel, PHP, HTML, CSS, JavaScript, MySQL, and Oracle. I enjoy solving problems, building scalable solutions, and integrating APIs and payment gateways.</p>
+        <p>I am Satyaranjan Mohanty, a Full-Stack Web Developer with 2.5 years of experience, currently working at Polosoft as a Software Developer. My expertise includes Laravel, PHP, HTML, CSS, JavaScript, MySQL, and Oracle. I enjoy solving problems, building scalable solutions, and integrating APIs and payment gateways to deliver exceptional results.</p>
     </section>
 
-    <section id="skills">
+    <section id="skills" class="fade-in">
         <h2>Skills</h2>
         <div class="skills">
             <div class="skill">Laravel (PHP) - 90%</div>
@@ -113,7 +127,7 @@
         </div>
     </section>
 
-    <section id="projects">
+    <section id="projects" class="fade-in">
         <h2>Projects</h2>
         <div class="projects">
             <div class="project">
@@ -134,15 +148,38 @@
         </div>
     </section>
 
-    <section id="contact">
+    <section id="contact" class="fade-in">
         <h2>Contact Me</h2>
-        <p>Email: [Your Email]</p>
+        <p>Email: satyaranjan.mohanty@example.com</p>
         <p>LinkedIn: <a href="https://linkedin.com">LinkedIn Profile</a></p>
         <p>GitHub: <a href="https://github.com">GitHub Profile</a></p>
     </section>
 
     <footer>
-        <p>&copy; 2025 [Your Name]. Built with HTML & CSS.</p>
+        <p>&copy; 2025 Satyaranjan Mohanty. Built with HTML, CSS, and JavaScript.</p>
     </footer>
+
+    <script>
+        // Add smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Trigger animations when elements come into view
+        const faders = document.querySelectorAll('.fade-in');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        });
+        faders.forEach(fader => observer.observe(fader));
+    </script>
 </body>
 </html>
