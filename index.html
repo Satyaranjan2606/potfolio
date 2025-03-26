@@ -1,34 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple HTML Page</title>
+    <title>Full-Stack Developer Portfolio</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #343a40;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        header p {
+            margin: 5px 0 20px;
+            font-size: 1.2rem;
+        }
+        .cta {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .cta a {
+            text-decoration: none;
+            color: white;
+            background-color: #0056b3;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .cta a:hover {
+            background-color: #003d80;
+        }
+        section {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        section h2 {
+            border-bottom: 2px solid #007bff;
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        .skills, .projects {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .skill, .project {
+            flex: 1 1 calc(50% - 20px);
+            padding: 15px;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            background-color: #f8f9fa;
+            transition: transform 0.3s;
+        }
+        .skill:hover, .project:hover {
+            transform: translateY(-5px);
+        }
+        footer {
             text-align: center;
             padding: 20px;
+            background-color: #343a40;
+            color: white;
         }
-
-        h1 {
-            color: #007BFF;
-        }
-
-        a {
+        footer a {
+            color: #007bff;
             text-decoration: none;
-            color: #007BFF;
         }
     </style>
 </head>
-
 <body>
-    <h1>Welcome to My Simple HTML Page</h1>
-    <p>This is a basic example of an HTML page with a little bit of styling.</p>
-    <a href="https://github.com" target="_blank">Visit GitHub</a>
-</body>
+    <header>
+        <h1>[Your Name]</h1>
+        <p>Full-Stack Web Developer | Laravel, PHP, JavaScript, APIs</p>
+        <div class="cta">
+            <a href="#projects">View Projects</a>
+            <a href="#contact">Contact Me</a>
+        </div>
+    </header>
 
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I am a Full-Stack Web Developer with 2.5 years of experience, currently working at Polosoft as a Software Developer. My expertise includes Laravel, PHP, HTML, CSS, JavaScript, MySQL, and Oracle. I enjoy solving problems, building scalable solutions, and integrating APIs and payment gateways.</p>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills">
+            <div class="skill">Laravel (PHP) - 90%</div>
+            <div class="skill">HTML/CSS - 95%</div>
+            <div class="skill">JavaScript - 85%</div>
+            <div class="skill">MySQL/Oracle - 80%</div>
+            <div class="skill">APIs & Integration - 85%</div>
+            <div class="skill">Payment Gateways - 75%</div>
+            <div class="skill">Java/C++ - 70%</div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="projects">
+            <div class="project">
+                <h3>E-commerce Website</h3>
+                <p>Technologies: Laravel, HTML, CSS, MySQL</p>
+                <p>Developed a complete e-commerce platform with features like product management, shopping cart, and secure payment gateway integration.</p>
+            </div>
+            <div class="project">
+                <h3>API Integration for CRM</h3>
+                <p>Technologies: PHP, Laravel, JavaScript</p>
+                <p>Integrated third-party APIs to enhance CRM functionality, enabling real-time data synchronization and automated workflows.</p>
+            </div>
+            <div class="project">
+                <h3>Inventory Management System</h3>
+                <p>Technologies: Laravel, Java, MySQL</p>
+                <p>Built a robust inventory tracking system for managing stock, suppliers, and purchase orders.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Email: [Your Email]</p>
+        <p>LinkedIn: <a href="https://linkedin.com">LinkedIn Profile</a></p>
+        <p>GitHub: <a href="https://github.com">GitHub Profile</a></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 [Your Name]. Built with HTML & CSS.</p>
+    </footer>
+</body>
 </html>
